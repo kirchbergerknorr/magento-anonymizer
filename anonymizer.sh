@@ -168,13 +168,6 @@ $DBCALL -e "UPDATE core_config_data SET value='0' WHERE path='dev/css/merge_css_
 $DBCALL -e "UPDATE core_config_data SET value='0' WHERE path='google/analytics/active'"
 $DBCALL -e "UPDATE core_config_data SET value='NOINDEX,NOFOLLOW' WHERE path='design/head/default_robots'"
 
-# set mail receivers
-$DBCALL -e "UPDATE core_config_data SET value='contact-magento-dev@trash-mail.com' WHERE path='trans_email/ident_general/email'"
-$DBCALL -e "UPDATE core_config_data SET value='contact-magento-dev@trash-mail.com' WHERE path='trans_email/ident_sales/email'"
-$DBCALL -e "UPDATE core_config_data SET value='contact-magento-dev@trash-mail.com' WHERE path='trans_email/ident_support/email'"
-$DBCALL -e "UPDATE core_config_data SET value='contact-magento-dev@trash-mail.com' WHERE path='trans_email/ident_custom1/email'"
-$DBCALL -e "UPDATE core_config_data SET value='contact-magento-dev@trash-mail.com' WHERE path='trans_email/ident_custom2/email'"
-
 # increase increment ids
 ## generate random number from 10 to 100
 function genRandomChar() {
