@@ -140,6 +140,9 @@ if [[ "$ANONYMIZE" == "y" || "$ANONYMIZE" == "Y" || -z "$ANONYMIZE" ]]; then
 
   # newsletter
   $DBCALL -e "UPDATE newsletter_subscriber SET subscriber_email=CONCAT('dev_newsletter_',subscriber_id,'@trash-mail.com') WHERE subscriber_email NOT IN ($KEEP_EMAIL)"
+  
+  # rma
+  $DBCALL -e "UPDATE m_rma_rma SET firstname = 'Demo', lastname = 'User', company = NULL, telephone = '0123-4567', email = CONCAT('dev_',rma_id,'@trash-mail.com'), payment_method = '', zendesk_ticket_id = 2"
 fi
 
 if [[ -z "$TRUNCATE_LOGS" ]]; then
